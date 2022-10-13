@@ -14,17 +14,12 @@
   </head>
   <body>
     <div class="container">
-      <h1>Budgtr ALL</h1>
-
-      <table>
-        <% for(let i = 0; i < budgetAll.length; i++){ %>
-        <tr>
-          <td><%= budgetAll[i].date %></td>
-          <td><a href="/budget/<%= i %>"><%= budgetAll[i].name %></a></td>
-          <td><%= budgetAll[i].amount %></td>
-        </tr>
-        <% } %>
-      </table>
+      <h1><%= budget.name %></h1>
+      <button onclick="location.href='/budgets'">BACK</button>
+      <!-- <% for(let i = 0; i < budget.length; i++){ %>
+      <p><%= budget[i] %></p>
+      <p><%= budget.values() %></p>
+      <% } %> -->
     </div>
   </body>
 </html>
