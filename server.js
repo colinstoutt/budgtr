@@ -4,11 +4,13 @@ const app = express();
 const port = 3000;
 
 //middleware
-app.use(express.urlencoded({ extended: false }));
+app.use(express.static("public"));
 
 // INDEX route
 app.get("/", (req, res) => {
-  res.send(budget);
+  res.render("index.ejs", {
+    budget: budget,
+  });
 });
 
 app.listen(port, () => {

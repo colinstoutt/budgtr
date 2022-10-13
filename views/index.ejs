@@ -1,2 +1,30 @@
-<link rel="stylesheet" href="/public/normalize.css" />
-<link rel="stylesheet" href="/public/skeleton.css" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <title>Budgtr</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Budgtr ALL</h1>
+
+      <table>
+        <% for(let i = 0; i < budget.length; i++){ %>
+        <tr>
+          <td><%= budget[i].date %></td>
+          <td><a href=""><%= budget[i].name %></a></td>
+          <td><%= budget[i].amount %></td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </body>
+</html>
