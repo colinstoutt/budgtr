@@ -11,15 +11,39 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
     />
     <title>Budgtr</title>
+    <style>
+      p {
+        margin: 0;
+        font-weight: bold;
+      }
+      li {
+        list-style: none;
+        margin-left: 40px;
+      }
+      button {
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <h1><%= budget.name %></h1>
       <button onclick="location.href='/budgets'">BACK</button>
-      <!-- <% for(let i = 0; i < budget.length; i++){ %>
-      <p><%= budget[i] %></p>
-      <p><%= budget.values() %></p>
-      <% } %> -->
+
+      <ul>
+        <p>date</p>
+        <li><%= budget.date %></li>
+        <p>name</p>
+        <li><%= budget.name %></li>
+        <p>from</p>
+        <li><%= budget.from %></li>
+        <p>amount</p>
+        <li><%= budget.amount %></li>
+        <p>tags</p>
+        <li><%= budget.tags %></li>
+      </ul>
     </div>
   </body>
 </html>
+
+<!--  Object.keys(budget[req.params.index]) -->

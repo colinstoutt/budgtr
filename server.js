@@ -9,6 +9,7 @@ app.use(express.static("public"));
 
 // INDEX route
 app.get("/budgets", (req, res) => {
+  console.log(Object.values(budget));
   res.render("index.ejs", {
     budgetAll: budget,
   });
