@@ -6,6 +6,7 @@ const port = 3000;
 
 //middleware
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
 
 // INDEX route
 app.get("/budgets", (req, res) => {
@@ -15,11 +16,21 @@ app.get("/budgets", (req, res) => {
   });
 });
 
+// NEW route
+app.get("/budgets/new", (req, res) => {
+  res.render("new.ejs");
+});
+
 // SHOW route
 app.get("/budget/:index", (req, res) => {
   res.render("show.ejs", {
     budget: budget[req.params.index],
   });
+});
+
+// POST route
+app.post("/budgets", (req, res) => {
+  console.log(req.body);
 });
 
 app.listen(port, () => {
