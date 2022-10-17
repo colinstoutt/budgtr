@@ -31,6 +31,9 @@ app.get("/budget/:index", (req, res) => {
 // POST route
 app.post("/budgets", (req, res) => {
   console.log(req.body);
+
+  budget.push(req.body);
+  res.redirect("/budgets");
 });
 
 app.listen(port, () => {
