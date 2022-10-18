@@ -42,6 +42,19 @@
         </tr>
         <% } %>
       </table>
+      <% if (bankAccount <= 0){ %>
+      <style>
+        h5 {
+          background-color: rgb(249, 104, 104);
+        }
+      </style>
+      <% } else if (bankAccount >= 1000){ %>
+      <style>
+        h5 {
+          background-color: lightgreen;
+        }
+      </style>
+      <% } %>
     </div>
   </body>
 </html>
