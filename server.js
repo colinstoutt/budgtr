@@ -1,4 +1,5 @@
 const budget = require("./models/budget.js");
+// let bankAccount = require("./models/bankAccount.js");
 
 const express = require("express");
 const app = express();
@@ -10,9 +11,10 @@ app.use(express.urlencoded({ extended: false }));
 
 // INDEX route
 app.get("/budgets", (req, res) => {
-  console.log(Object.values(budget));
+  // console.log(Object.values(budget));
   res.render("index.ejs", {
     budgetAll: budget,
+    // bankAccount: bankAccount,
   });
 });
 
@@ -30,9 +32,10 @@ app.get("/budget/:index", (req, res) => {
 
 // POST route
 app.post("/budgets", (req, res) => {
-  console.log(req.body);
+  console.log(typeof req.body.amount);
 
   budget.push(req.body);
+
   res.redirect("/budgets");
 });
 

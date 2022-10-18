@@ -11,17 +11,34 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
     />
     <title>Budgtr</title>
+    <style>
+      h1 {
+        font-size: 40px;
+        margin-top: 20px;
+      }
+      h5 {
+        display: inline;
+        padding: 7px 20px;
+        border-radius: 10px;
+        background-color: rgb(235, 235, 235);
+        margin-right: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1>Budgtr ALL</h1>
+      <% let bankAccount = 0; %> <% for(let i = 0; i < budgetAll.length; i++){
+      bankAccount += parseInt(budgetAll[i].amount) } %>
+
+      <h1>Budgtr</h1>
+      <h5>Bank account: <%= bankAccount %> $USD</h5>
       <button onclick="location.href='/budgets/new'">NEW ITEM</button>
       <table>
         <% for(let i = 0; i < budgetAll.length; i++){ %>
         <tr>
           <td><%= budgetAll[i].date %></td>
           <td><a href="/budget/<%= i %>"><%= budgetAll[i].name %></a></td>
-          <td>$<%= budgetAll[i].amount %></td>
+          <td>$<%= parseInt(budgetAll[i].amount) %></td>
         </tr>
         <% } %>
       </table>
